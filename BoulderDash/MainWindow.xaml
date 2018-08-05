@@ -1,0 +1,54 @@
+﻿<Window x:Class="BoulderDashGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BoulderDashGUI"
+        mc:Ignorable="d"
+        Title="BoulderDash by Saveliy Kolesnikov. Tg: @SaveMeAgain"  Width="1000" Height="800" MinHeight="800" MinWidth="840"
+        KeyDown="MainWindow_OnKeyDown"
+        DataContext="{RelativeSource Self}" 
+        x:Name="Window"
+        >
+    <Window.Resources>
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="Control.FontFamily" Value="Helvetica" />
+            <Setter Property="Foreground" Value="CornflowerBlue" />
+            <Setter Property="FontSize" Value="32"></Setter>
+            <Setter Property="TextWrapping" Value="Wrap"></Setter>
+            <Setter Property="TextAlignment" Value="Center"></Setter>
+            
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="640" Height="*"></RowDefinition>
+            <RowDefinition Height="60px"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Canvas x:Name="GameFieldCanvas" MinWidth="640" Grid.Column="0" ClipToBounds="True">
+
+        </Canvas>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Style="{StaticResource TextBlockStyle}" Padding="15 15 5 15">
+                    Diamonds to next lvl: 
+                </TextBlock>
+                <TextBlock Style="{StaticResource TextBlockStyle}"  Padding="0 15 15 15" Text="{Binding DiamondsToNextLvl, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                </TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Style="{StaticResource TextBlockStyle}" Padding="15 15 5 15">
+                    Your score:
+                </TextBlock>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Padding="0 15 15 15" 
+                           Text="{Binding PlayerScore, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
