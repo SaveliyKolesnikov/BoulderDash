@@ -1,9 +1,9 @@
 # BoulderDash
-An Object-oriented implementation of boulder dash game using C#, WPF
+An Object-oriented implementation of Boulder Dash game using C#, WPF
 
 Purpose
 -------
-This purpose of Snake JS is (in this order)
+The purpose of this project
 
 1.	to practise good OOP design;
 2.	to learn how to use WPF canvas;
