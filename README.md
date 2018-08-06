@@ -9,5 +9,6 @@ The purpose of this project
 2.	to learn how to use WPF canvas;
 3.	to create an extremely entertaining game.
 
-# What is Boulder Dash ? 
+What is Boulder Dash ? 
+-------
 https://en.wikipedia.org/wiki/Boulder_Dash
